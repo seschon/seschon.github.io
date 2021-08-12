@@ -2,10 +2,68 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Sarah Schon</title>
+    <title>It's 5 o'clock somewhere</title>
   </head>
   <body>
-    <p>hi welcome to sarahschon.com, the digital version of Sarah Schon!</p>
-    <img src="https://media.tenor.com/images/20ed8c76b1139be71651a0c32e525f90/tenor.gif" alt="CAW!!">
+    <h1 id="somewhere"></h1>
   </body>
+<script>// Set variable to current date and time
+const now = new Date();
+const hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1]
+const places = ['London, England',
+                'Paris, France',
+                'Cape Town, South Africa',
+                'Istanbul, Turkey',
+                'Yerevan, Armenia',
+                'Karāchi, Pakistan',
+                'Bangladesh, India',
+                'Ho Chi Minh City, Vietnam',
+                'Beijing, China',
+                'Tokyo, Japan',
+                'Sydney, Australia',
+                'Magadan, Russia',
+                'Aukland, New Zealand',
+                "Nuku'alofa, Tonga",
+                'Honolulu, Hawaii',
+                'Anchorage, Alaska',
+                'Los Angeles, California',
+                'Denver, Colorado',
+                'Dallas, Texas',
+                'New York, New York',
+                'Santiago, Chile',
+                'Rio de Janero, Brazil',
+                'South Sandwich Islands',
+                'Ittoqqorttoormiit, Greenland'
+                ]
+
+//testing length of lists is correct
+console.log("hours:",hours.length);
+console.log("places:",places.length);
+
+//testing hour GMT right now
+console.log(now.getUTCHours());
+
+hour = 17 - now.getUTCHours();
+if (hour < 0) {
+  hour += 24;
+};
+
+console.log(hour);
+console.log(hours[hour]);
+console.log(places[hour]);
+
+document.getElementById('somewhere').innerHTML = "It's 5 o'clock in " + places[hour]
+</script>
+<style>
+  body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("jimmy.jpeg");
+
+  }
+  h1 {
+    text-align: center;
+    padding-top: 250px;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+</style>
 </html>
